@@ -43,23 +43,23 @@ const level1 = (p) => {
 
 const welcomeScreen = (p) => {
 
+  let img = [];
+  
   p.setup = function() {
     p.createCanvas(400, 400);
-
-    scoreElem = p.createDiv('Welcome to the game');
-    scoreElem.position(p.width / 2 - 100, p.height / 2);
-    scoreElem.id = 'score';
-    scoreElem.style('color', 'black');
-    scoreElem.style('font-size', '16pt');
 
     newGameButton = p.createButton('Level 1');
     newGameButton.position(15, p.height / 2 + 50);
     newGameButton.mousePressed(p.startLevel1);
+    
+    img = p.loadImage('html5_game.png');
   }
 
   p.draw = function() {
     p.background(255);
 
+    p.image(img, 110, 0);
+    
     p.noFill();
     p.stroke(0);
     p.strokeWeight(3);
@@ -73,4 +73,4 @@ const welcomeScreen = (p) => {
 
 }
 
-new p5(level1);
+new p5(welcomeScreen);
