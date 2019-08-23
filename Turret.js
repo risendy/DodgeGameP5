@@ -1,4 +1,5 @@
 let bullets = [];
+let bulletColor = 'yellow';
 
 class Turret {
   constructor(x, y, diameter, color, obj) {
@@ -19,9 +20,8 @@ class Turret {
       bullets[i].show();
       bullets[i].update();
 
-      if (bullets[i].isOutOfScreen())
-      {
-          bullets.splice(i, 1);
+      if (bullets[i].isOutOfScreen()) {
+        bullets.splice(i, 1);
       }
     }
   }
@@ -32,10 +32,10 @@ class Turret {
         this.x + 15,
         this.y,
         0,
-        1,
+        0.5,
         10,
-        'red',
-          this.obj
+        bulletColor,
+        this.obj
       );
 
       bullets.push(bullet);

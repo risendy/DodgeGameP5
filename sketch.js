@@ -1,100 +1,69 @@
-const level1 = ( p ) => {
-  let hero = [];
-
+const level1 = (p) => {
+  p5.disableFriendlyErrors = true;
+  let game = [];
   let turrets = [];
+  
   let cross = new Cross(
-      200,
-      200,
-      6,
-      25
+    200,
+    200,
+    6,
+    25
   );
 
   p.setup = function() {
     p.createCanvas(400, 400);
 
-    hero = new Hero(this);
+    goBackButton = p.createButton('Go back');
+    goBackButton.position(p.width + 20, p.height + 20);
+    goBackButton.mousePressed(p.goBack);
+    
+    tryAgainButton = p.createButton('Try again');
+    tryAgainButton.position(p.width + 20, p.height + 40);
+    tryAgainButton.mousePressed(p.resetLevel);
 
-    newGameButton = p.createButton('New game');
-    newGameButton.position(p.width+20, p.height+20);
-    newGameButton.mousePressed(p.resetLevel);
-
-    scoreElem = p.createDiv('Game in progress');
-    scoreElem.position(p.width, p.height);
-    scoreElem.id = 'score';
-    scoreElem.style('color', 'black');
-
-    let turret = new Turret(
-        150,
-        0,
-        30,
-        'yellow',
-        this
-    );
-
-    turrets.push(turret);
+    game = new Game(1, this);
   }
 
-  p.resetLevel = function() {
+  p.goBack = function() {
     p.remove();
     new p5(welcomeScreen);
   }
-
-  p.startLevel1 = function() {
-    for (let i = 0; i < turrets.length; i++) {
-      turrets[i].show();
-      turrets[i].shoot();
-      turrets[i].update();
-    }
-
-    hero.show();
-    hero.update();
-    hero.isHit(bullets);
-
-    if (!hero.isAlive) {
-      noLoop();
-      scoreElem.html('Game ended!');
-    }
-    //cross.show();
+  
+  p.resetLevel = function() {
+    game.reset();
   }
 
   p.draw = function() {
     p.background(255);
 
-    for (let i = 0; i < turrets.length; i++) {
-      turrets[i].show();
-      turrets[i].shoot();
-      turrets[i].update();
-    }
-
-    hero.show();
-    hero.update();
-    hero.isHit(bullets);
-
-    if (!hero.isAlive) {
-      p.noLoop();
-      scoreElem.html('Game ended!');
-    }
+    game.loadLevel1();
   }
 
 }
 
-const welcomeScreen = ( p ) => {
+const welcomeScreen = (p) => {
 
   p.setup = function() {
     p.createCanvas(400, 400);
 
     scoreElem = p.createDiv('Welcome to the game');
-    scoreElem.position(p.width/2, p.height/2);
+    scoreElem.position(p.width / 2 - 100, p.height / 2);
     scoreElem.id = 'score';
     scoreElem.style('color', 'black');
+    scoreElem.style('font-size', '16pt');
 
-    newGameButton = p.createButton('New Game');
-    newGameButton.position(p.width/2+20, p.height/2+20);
+    newGameButton = p.createButton('Level 1');
+    newGameButton.position(15, p.height / 2 + 50);
     newGameButton.mousePressed(p.startLevel1);
   }
 
   p.draw = function() {
     p.background(255);
+
+    p.noFill();
+    p.stroke(0);
+    p.strokeWeight(3);
+    p.rect(5, p.height - 160, p.width - 15, 150);
   }
 
   p.startLevel1 = function() {
@@ -104,4 +73,4 @@ const welcomeScreen = ( p ) => {
 
 }
 
-new p5(welcomeScreen);
+new p5(level1);

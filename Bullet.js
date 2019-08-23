@@ -10,7 +10,10 @@ class Bullet {
   }
 
   show() {
+    this.obj.push();
+    this.obj.fill(this.color);
     this.obj.circle(this.x, this.y, this.diameter);
+    this.obj.pop();
   }
 
   update() {
