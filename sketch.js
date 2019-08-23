@@ -52,7 +52,7 @@ const welcomeScreen = (p) => {
     newGameButton.position(15, p.height / 2 + 50);
     newGameButton.mousePressed(p.startLevel1);
     
-    img = p.loadImage('html5_game.png');
+    img = p.loadImage('assets/img/html5_game.png');
   }
 
   p.draw = function() {
