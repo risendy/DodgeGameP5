@@ -148,6 +148,16 @@ let wallCoordinatesLevel1 = [{
   },
 ];
 
+let centerBoxLevel1 = [{
+    rows: 10,
+    cols: 10,
+    squareSize: 25,
+    offsetX: 80,
+    offsetY: 60,
+    colorX: 'white',
+    colorY: '#e7ece6'},
+];
+
 let startingBoxLevel1 = [{
     x: 0,
     y: 0,

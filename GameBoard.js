@@ -25,7 +25,7 @@ class GameBoard {
 
         self.walls.push(wall);
       });
-
+      
       startingBoxLevel1.forEach(function(item) {
         self.startingBox = new LandingBox(
           item.x,
@@ -47,18 +47,20 @@ class GameBoard {
           self.obj
         );
       });
+      
     }
   }
 
   showLevel1() {
-    this.drawCheckBoardBox(10, 10, 25, 80, 60, this.boardColorY, this.boardColorX);
-
     this.startingBox.show();
     this.endingBox.show();
-
+    
     for (var i = 0; i < this.walls.length; i++) {
       this.walls[i].show();
     }
+    
+    this.drawCheckBoardBox(centerBoxLevel1[0].rows, centerBoxLevel1[0].cols,centerBoxLevel1[0].squareSize, centerBoxLevel1[0].offsetX, centerBoxLevel1[0].offsetY, centerBoxLevel1[0].colorX, centerBoxLevel1[0].colorY);
+
   }
 
   drawCheckBoardBox(rows, cols, squareSize, offsetX, offsetY, colorX, colorY) {
