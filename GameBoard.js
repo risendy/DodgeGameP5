@@ -1,5 +1,5 @@
 class GameBoard {
-  constructor(obj) {
+  constructor(level, obj) {
     this.obj = obj;
 
     this.boardColorX = 255;
@@ -9,53 +9,49 @@ class GameBoard {
     this.endingBox = [];
     this.walls = [];
 
-    this.wall = new Wall(0, 0, 78, 0, 'black', this.obj);
-    this.wall2 = new Wall(0, 0, 0, 135, 'black', this.obj);
-    this.wall3 = new Wall(0, 135, 78, 135, 'black', this.obj);
-    this.wall4 = new Wall(80, 0, 80, 60, 'black', this.obj);
-    this.wall5 = new Wall(80, 135, 80, 310, 'black', this.obj);
-    this.wall6 = new Wall(80, 310, 330, 310, 'black', this.obj);
-    this.wall7 = new Wall(80, 60, 330, 60, 'black', this.obj);
-    this.wall8 = new Wall(330, 60, 330, 250, 'black', this.obj);
-    this.wall9 = new Wall(330, 250, 400, 250, 'black', this.obj);
-    this.wall10 = new Wall(400, 250, 400, 385, 'black', this.obj);
-    this.wall11 = new Wall(400, 385, 330, 385, 'black', this.obj);
-    this.wall12 = new Wall(330, 385, 330, 310, 'black', this.obj);
+    if (level == 1) {
 
-    this.walls.push(this.wall);
-    this.walls.push(this.wall2);
-    this.walls.push(this.wall3);
-    this.walls.push(this.wall4);
-    this.walls.push(this.wall5);
-    this.walls.push(this.wall6);
-    this.walls.push(this.wall7);
-    this.walls.push(this.wall8);
-    this.walls.push(this.wall9);
-    this.walls.push(this.wall10);
-    this.walls.push(this.wall11);
-    this.walls.push(this.wall12);
+      var self = this;
+
+      wallCoordinatesLevel1.forEach(function(item) {
+        let wall = new Wall(
+          item.x1,
+          item.y1,
+          item.x2,
+          item.y2,
+          item.color,
+          self.obj
+        );
+
+        self.walls.push(wall);
+      });
+
+      startingBoxLevel1.forEach(function(item) {
+        self.startingBox = new LandingBox(
+          item.x,
+          item.y,
+          item.w,
+          item.h,
+          item.color,
+          self.obj
+        );
+      });
+
+      endingBoxLevel1.forEach(function(item) {
+        self.endingBox = new LandingBox(
+          item.x,
+          item.y,
+          item.w,
+          item.h,
+          item.color,
+          self.obj
+        );
+      });
+    }
   }
 
   showLevel1() {
     this.drawCheckBoardBox(10, 10, 25, 80, 60, this.boardColorY, this.boardColorX);
-
-    this.startingBox = new LandingBox(
-      0,
-      0,
-      79,
-      135,
-      this.obj.color(119, 231, 81),
-      this.obj
-    );
-
-    this.endingBox = new LandingBox(
-      330,
-      250,
-      70,
-      135,
-      this.obj.color(119, 231, 81),
-      this.obj
-    );
 
     this.startingBox.show();
     this.endingBox.show();
@@ -81,8 +77,8 @@ class GameBoard {
   getEndingBox() {
     return this.endingBox;
   }
-  
-  getWalls(){
-     return this.walls; 
+
+  getWalls() {
+    return this.walls;
   }
 }

@@ -3,9 +3,9 @@ class Game {
     this.turrets = [];
     this.obj = obj;
     this.hero = new Hero(this.obj);
-    this.gameBoard = new GameBoard(this.obj);
+    this.gameBoard = new GameBoard(level, this.obj);
     this.walls = this.gameBoard.getWalls();
-    
+
     this.scoreElem = this.obj.createDiv('Game in progress');
     this.scoreElem.position(0, this.obj.height);
     this.scoreElem.style('color', 'black');
@@ -19,48 +19,29 @@ class Game {
     this.deathCountNumber.style('color', 'black');
 
     if (level == 1) {
-      let turret = new Turret(
-        100,
-        0,
-        30,
-        'yellow',
-        obj
-      );
+      var self = this;
+      
+      turretCoordinatesLevel1.forEach(function(item) {
+        let turret = new Turret(
+          item.x,
+          item.y,
+          item.vx,
+          item.vy,
+          item.diameter,
+          item.color,
+          obj
+        );
 
-      let turret2 = new Turret(
-        150,
-        0,
-        30,
-        'yellow',
-        obj
-      );
+        self.turrets.push(turret);
 
-      let turret3 = new Turret(
-        200,
-        0,
-        30,
-        'yellow',
-        obj
-      );
+      });
 
-      let turret4 = new Turret(
-        250,
-        0,
-        30,
-        'yellow',
-        obj
-      );
-
-      this.turrets.push(turret);
-      this.turrets.push(turret2);
-      this.turrets.push(turret3);
-      this.turrets.push(turret4);
     }
   }
 
   loadLevel1() {
     this.gameBoard.showLevel1();
-    
+
     for (let i = 0; i < this.turrets.length; i++) {
       this.turrets[i].show();
       this.turrets[i].shoot();

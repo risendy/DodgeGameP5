@@ -2,9 +2,11 @@ let bullets = [];
 let bulletColor = 'yellow';
 
 class Turret {
-  constructor(x, y, diameter, color, obj) {
+  constructor(x, y, vx, vy, diameter, color, obj) {
     this.x = x;
     this.y = y;
+    this.vx = vx;
+    this.vy = vy;
     this.diameter = diameter;
     this.color = color;
     this.obj = obj;
@@ -28,11 +30,12 @@ class Turret {
 
   shoot() {
     if (this.obj.frameCount % 50 == 0) {
+
       let bullet = new Bullet(
         this.x + 15,
-        this.y,
-        0,
-        0.5,
+        this.y + 15,
+        this.vx,
+        this.vy,
         10,
         bulletColor,
         this.obj
