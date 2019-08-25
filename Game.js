@@ -4,7 +4,7 @@ class Game {
     this.hero = new Hero(this.obj);
     this.gameBoard = new GameBoard(level, this.obj);
     this.walls = this.gameBoard.getWalls();
-
+    this.turrets = this.gameBoard.getTurrets();
     this.scoreElem = this.obj.createDiv('Game in progress');
     this.scoreElem.position(0, this.obj.height);
     this.scoreElem.style('color', 'black');
@@ -26,7 +26,7 @@ class Game {
     this.hero.show();
     this.hero.update(this.walls);
     
-    if (this.gameBoard.getTurrets.length > 0){
+    if (this.turrets.length > 0 && bullets.length > 0){
       this.hero.isHit(bullets);
     }
       

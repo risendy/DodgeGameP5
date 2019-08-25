@@ -48,10 +48,10 @@ class Hero {
     }
   }
 
-  isHit(bullets) {
-    if (bulletts) {
-      for (let i = 0; i < bullets.length; i++) {
-        let isHit = this.obj.collideRectCircle(this.x, this.y, 15, 15, bullets[i].x, bullets[i].y, 10);
+  isHit(bulletsArray) {
+    if (bulletsArray.length > 0) {
+      for (let i = 0; i < bulletsArray.length; i++) {
+        let isHit = this.obj.collideRectCircle(this.x, this.y, 15, 15, bulletsArray[i].x, bulletsArray[i].y, 10);
 
         if (isHit) {
           this.color = 'black';

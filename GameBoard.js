@@ -20,7 +20,7 @@ class GameBoard {
     this.startingBox.show();
     this.endingBox.show();
 
-    if (this.walls) {
+    if (this.walls.length > 0) {
 
       for (var i = 0; i < this.walls.length; i++) {
         this.walls[i].show();

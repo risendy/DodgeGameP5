@@ -52,9 +52,9 @@ const welcomeScreen = (p) => {
     Level1Button.position(15, p.height / 2 + 50);
     Level1Button.mousePressed(p.startLevel1);
     
-    Level2Button = p.createButton('Level 2');
-    Level2Button.position(85, p.height / 2 + 50);
-    Level2Button.mousePressed(p.startLevel2); 
+    //Level2Button = p.createButton('Level 2');
+    //Level2Button.position(85, p.height / 2 + 50);
+    //Level2Button.mousePressed(p.startLevel2); 
     
     img = p.loadImage('assets/img/html5_game.png');
   }
