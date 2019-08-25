@@ -1,4 +1,4 @@
-let bullets = [];
+var bullets = [];
 let bulletColor = 'yellow';
 
 class Turret {
