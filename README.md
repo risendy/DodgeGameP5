@@ -32,5 +32,8 @@ Project is created with:
 ### Homepage
 ![Main page](assets/img/screen1.png)
 
-### Level
-![Main page](assets/img/screen2.png)
+### Level 1
+![Level 1](assets/img/screen2.png)
+
+### Level 2
+![Level 2](assets/img/screen3.png)

@@ -1,4 +1,13 @@
-let turretCoordinatesLevel1 = [{
+let numberOfLevels = 1;
+let turretsMap = {};
+let crossesMap = {};
+let startingBoxMap = {};
+let centerBoxMap = {};
+let endingBoxMap = {};
+let wallsMap = {};
+
+let turretCoordinatesLevel1 = [
+  {
     x: 100,
     y: 0,
     vx: 0,
@@ -15,6 +24,7 @@ let turretCoordinatesLevel1 = [{
     color: 'yellow'
   },
   {
+    level: 0,
     x: 200,
     y: 0,
     vx: 0,
@@ -47,6 +57,60 @@ let turretCoordinatesLevel1 = [{
     color: 'yellow'
   }
 ];
+
+turretsMap[1] = turretCoordinatesLevel1;
+turretsMap[2] = {};
+
+let crossesCoordinatesLevel2 = [
+  {
+    x: 205,
+    y: 185,
+    rotationCenterX: 205,
+    rotationCenterY: 185,
+    numberOfCircles: 8,
+    diameter: 15,
+    color: 'yellow'
+  },
+  {
+    x: 130,
+    y: 110,
+    rotationCenterX: 130,
+    rotationCenterY: 110,
+    numberOfCircles: 4,
+    diameter: 15,
+    color: 'yellow'
+  },
+  {
+    x: 280,
+    y: 110,
+    rotationCenterX: 280,
+    rotationCenterY: 110,
+    numberOfCircles: 4,
+    diameter: 15,
+    color: 'yellow'
+  },
+  {
+    x: 130,
+    y: 260,
+    rotationCenterX: 130,
+    rotationCenterY: 260,
+    numberOfCircles: 4,
+    diameter: 15,
+    color: 'yellow'
+  },
+  {
+    x: 280,
+    y: 260,
+    rotationCenterX: 280,
+    rotationCenterY: 260,
+    numberOfCircles: 4,
+    diameter: 15,
+    color: 'yellow'
+  },
+];
+
+crossesMap[1] = [];
+crossesMap[2] = crossesCoordinatesLevel2;
 
 let wallCoordinatesLevel1 = [{
     x1: 0,
@@ -148,6 +212,9 @@ let wallCoordinatesLevel1 = [{
   },
 ];
 
+wallsMap[1] = wallCoordinatesLevel1;
+wallsMap[2] = [];
+
 let centerBoxLevel1 = [{
     rows: 10,
     cols: 10,
@@ -155,8 +222,11 @@ let centerBoxLevel1 = [{
     offsetX: 80,
     offsetY: 60,
     colorX: 'white',
-    colorY: '#e7ece6'},
+    colorY: '#e7ece6'},                 
 ];
+
+centerBoxMap[1] = centerBoxLevel1;
+centerBoxMap[2] = centerBoxLevel1;
 
 let startingBoxLevel1 = [{
     x: 0,
@@ -167,6 +237,9 @@ let startingBoxLevel1 = [{
   },
 ];
 
+startingBoxMap[1] = startingBoxLevel1;
+startingBoxMap[2] = startingBoxLevel1;
+
 let endingBoxLevel1 = [{
     x: 330,
     y: 250,
@@ -175,3 +248,6 @@ let endingBoxLevel1 = [{
     color: '#77E751'
   },
 ];
+
+endingBoxMap[1] = endingBoxLevel1;
+endingBoxMap[2] = endingBoxLevel1;

@@ -1,11 +1,12 @@
 class Game {
   constructor(level, obj) {
-    this.turrets = [];
     this.obj = obj;
     this.hero = new Hero(this.obj);
     this.gameBoard = new GameBoard(level, this.obj);
     this.walls = this.gameBoard.getWalls();
-
+    this.turrets = this.gameBoard.getTurrets();
+    this.crosses = this.gameBoard.getCrosses();
+    
     this.scoreElem = this.obj.createDiv('Game in progress');
     this.scoreElem.position(0, this.obj.height);
     this.scoreElem.style('color', 'black');
@@ -17,41 +18,24 @@ class Game {
     this.deathCountNumber = this.obj.createSpan('0');
     this.deathCountNumber.position(90, this.obj.height + 15);
     this.deathCountNumber.style('color', 'black');
-
-    if (level == 1) {
-      var self = this;
-      
-      turretCoordinatesLevel1.forEach(function(item) {
-        let turret = new Turret(
-          item.x,
-          item.y,
-          item.vx,
-          item.vy,
-          item.diameter,
-          item.color,
-          obj
-        );
-
-        self.turrets.push(turret);
-
-      });
-
-    }
   }
 
-  loadLevel1() {
-    this.gameBoard.showLevel1();
+  load() {
+    //loading boxes and turrets
+    this.gameBoard.show();
 
-    for (let i = 0; i < this.turrets.length; i++) {
-      this.turrets[i].show();
-      this.turrets[i].shoot();
-      this.turrets[i].update();
-    }
-
+    //loading hero
     this.hero.show();
     this.hero.update(this.walls);
-    this.hero.isHit(bullets);
-
+    
+    if (this.turrets.length > 0 && bullets.length > 0){
+      this.hero.isHitByBullets(bullets);
+    }
+    
+    if (this.crosses){
+      this.hero.isHitByCrosses(this.crosses);
+    }
+      
     this.checkIfHeroIsAlive();
     this.checkIfGameIsCompleted();
   }
