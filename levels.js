@@ -24,7 +24,6 @@ let turretCoordinatesLevel1 = [
     color: 'yellow'
   },
   {
-    level: 0,
     x: 200,
     y: 0,
     vx: 0,
@@ -222,7 +221,7 @@ let centerBoxLevel1 = [{
     offsetX: 80,
     offsetY: 60,
     colorX: 'white',
-    colorY: '#e7ece6'},                 
+    colorY: '#e7ece6'},
 ];
 
 centerBoxMap[1] = centerBoxLevel1;
