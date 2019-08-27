@@ -9,9 +9,14 @@ class Bullet {
     this.obj = obj;
   }
 
-  show() {
+  show() {   
     this.obj.push();
-    this.obj.fill(this.color);
+    this.obj.fill(this.color, 20);
+    
+    //this.obj.stroke('black');
+
+    //scribble.scribbleRoundedRect( this.x, this.y, this.diameter, this.diameter, this.diameter );
+
     this.obj.circle(this.x, this.y, this.diameter);
     this.obj.pop();
   }

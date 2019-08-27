@@ -81,6 +81,9 @@ class Hero {
 
   show() {
     this.obj.fill(this.color);
+    
+    //scribble.scribbleRect( this.x, this.y, this.diameter, this.diameter );
+
     this.obj.square(this.x, this.y, this.diameter);
   }
 }

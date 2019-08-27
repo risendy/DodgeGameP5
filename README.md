@@ -11,17 +11,19 @@ Dodge game made using p5.js library. Use arrows to move.
 	
 ## Technologies
 Project is created with:
-* p5.js/p5.dom/p5.collide2D
+* p5.js/p5.dom
+* p5.collide2D - https://github.com/bmoren/p5.collide2D
+* p5.scribble - https://github.com/generative-light/p5.scribble.js
 
 ## Features
-* Implemented first level of the game
-* Usable objects - Turrets/Walls
+* Welcome screen and first 2 levels
+* Usable objects - Turrets/Walls/Moving circles
 * Death count
 
 ## TODO
 * More levels 
-* Better menu
 * More objects
+* Saving user progress
 
 ## Installation
 * Clone the repository
@@ -35,5 +37,3 @@ Project is created with:
 ### Level 1
 ![Level 1](assets/img/screen2.png)
 
-### Level 2
-![Level 2](assets/img/screen3.png)

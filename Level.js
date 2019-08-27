@@ -54,7 +54,7 @@ class Level {
     let self = this;
 
     endingBoxMap[this.level].forEach(function(item) {
-      self.endingBox = new LandingBox(
+      self.endingBox = new EndingBox(
         item.x,
         item.y,
         item.w,

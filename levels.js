@@ -24,6 +24,7 @@ let turretCoordinatesLevel1 = [
     color: 'yellow'
   },
   {
+    level: 0,
     x: 200,
     y: 0,
     vx: 0,
@@ -215,13 +216,13 @@ wallsMap[1] = wallCoordinatesLevel1;
 wallsMap[2] = [];
 
 let centerBoxLevel1 = [{
-    rows: 10,
-    cols: 10,
-    squareSize: 25,
+    rows: 6,
+    cols: 6,
+    squareSize: 42,
     offsetX: 80,
     offsetY: 60,
     colorX: 'white',
-    colorY: '#e7ece6'},
+    colorY: '#e7ece6'}, 
 ];
 
 centerBoxMap[1] = centerBoxLevel1;
@@ -240,9 +241,9 @@ startingBoxMap[1] = startingBoxLevel1;
 startingBoxMap[2] = startingBoxLevel1;
 
 let endingBoxLevel1 = [{
-    x: 330,
-    y: 250,
-    w: 70,
+    x: 325,
+    y: 255,
+    w: 60,
     h: 135,
     color: '#77E751'
   },

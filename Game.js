@@ -9,15 +9,15 @@ class Game {
     
     this.scoreElem = this.obj.createDiv('Game in progress');
     this.scoreElem.position(0, this.obj.height);
-    this.scoreElem.style('color', 'black');
+    this.scoreElem.class('game-progress');
 
     this.deathCountElem = this.obj.createDiv('Death count: ');
-    this.deathCountElem.position(0, this.obj.height + 15);
-    this.deathCountElem.style('color', 'black');
+    this.deathCountElem.position(160, this.obj.height+5);
+    this.deathCountElem.class('death-count-before');
 
     this.deathCountNumber = this.obj.createSpan('0');
-    this.deathCountNumber.position(90, this.obj.height + 15);
-    this.deathCountNumber.style('color', 'black');
+    this.deathCountNumber.position(260, this.obj.height + 9);
+    this.deathCountElem.class('death-count-after');
   }
 
   load() {

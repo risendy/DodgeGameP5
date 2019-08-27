@@ -1,5 +1,5 @@
 var bullets = [];
-let bulletColor = 'yellow';
+let bulletColor = 0;
 
 class Turret {
   constructor(x, y, vx, vy, diameter, color, obj) {
@@ -13,8 +13,15 @@ class Turret {
   }
 
   show() {
-    this.obj.fill(this.color);
-    this.obj.square(this.x, this.y, this.diameter);
+    this.obj.push();
+    //this.obj.fill('blue');
+    this.obj.stroke( 0, 50, 180 );
+
+    scribble.scribbleFilling( [this.x, this.x+30, this.x+30, this.x], [this.y+35, this.y+35, this.y+5, this.y+5], gap, angleScribble);
+    scribble.scribbleRect( this.x+15, this.y+20, this.diameter, this.diameter );
+
+    //this.obj.square(this.x, this.y, this.diameter);
+    this.obj.pop();
   }
 
   update() {
