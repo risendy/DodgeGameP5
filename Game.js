@@ -55,6 +55,10 @@ class Game {
     if (this.obj.collideRectRect(this.hero.x, this.hero.y, this.hero.diameter, this.hero.diameter, endingBox.x, endingBox.y, endingBox.w, endingBox.h)) {
       this.obj.noLoop();
       this.scoreElem.html('Level completed!');
+      
+      nextLevelButton.removeAttribute('disabled');
+
+      Cookies.set('level_'+(activeLevel+1), 'true', { expires: 365 });
     }
   }
 

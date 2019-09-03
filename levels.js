@@ -213,7 +213,7 @@ let wallCoordinatesLevel1 = [{
 ];
 
 wallsMap[1] = wallCoordinatesLevel1;
-wallsMap[2] = [];
+wallsMap[2] = wallCoordinatesLevel1;
 
 let centerBoxLevel1 = [{
     rows: 6,

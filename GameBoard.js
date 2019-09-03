@@ -17,8 +17,22 @@ class GameBoard {
     this.endingBox = this.levelObj.initEndingBox();
     this.walls = this.levelObj.initWalls();
   }
+  
+  drawBackground () {
+    this.obj.push();
+    this.obj.noFill();
+    this.obj.strokeWeight(1);
+    this.obj.stroke(0, 25);
+    for (let i = 0; i < 20; i++) {
+      for (let j = 0; j < 20; j++) {
+        this.obj.rect(i * 20, j * 20, 20, 20);
+      }
+    }
+    this.obj.pop();
+  }
 
   show() {
+    this.drawBackground();
     this.startingBox.show();
     this.endingBox.show();
 
