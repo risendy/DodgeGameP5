@@ -12,7 +12,7 @@ class Wall{
     this.obj.push();
     this.obj.fill(0);
     this.obj.stroke(0);
-    this.obj.strokeWeight(2);
+    this.obj.strokeWeight(3);
     this.obj.line(this.x1, this.y1, this.x2, this.y2);
     this.obj.pop();
   }

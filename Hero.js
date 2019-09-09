@@ -65,12 +65,25 @@ class Hero {
 
         for (let j = 0; j < circles.length; j++) {
           let isHit = this.obj.collideRectCircle(this.x, this.y, this.diameter, this.diameter, circles[j].x, circles[j].y, 15);
-          
+
           if (isHit) {
             this.color = 'black';
             this.isAlive = false;
           }
         }
+      }
+    }
+  }
+
+  isHitByBalls(ballsArray) {
+    if (ballsArray.length > 0) {
+      for (let i = 0; i < ballsArray.length; i++) {
+        let isHit = this.obj.collideRectCircle(this.x, this.y, this.diameter, this.diameter, ballsArray[i].x, ballsArray[i].y, ballsArray[i].diameter);
+
+          if (isHit) {
+            this.color = 'black';
+            this.isAlive = false;
+          }
       }
     }
   }
@@ -81,7 +94,7 @@ class Hero {
 
   show() {
     this.obj.fill(this.color);
-    
+
     //scribble.scribbleRect( this.x, this.y, this.diameter, this.diameter );
 
     this.obj.square(this.x, this.y, this.diameter);

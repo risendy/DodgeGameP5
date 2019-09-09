@@ -11,6 +11,7 @@ class GameBoard {
     this.level = level;
     this.levelObj = new Level(level, obj);
     this.turrets = this.levelObj.initTurrets();
+    this.balls = this.levelObj.initBalls();
     this.crosses = this.levelObj.initCrosses();
     this.startingBox = this.levelObj.initStartingBox();
     this.centerBoxes = this.levelObj.initCenterBox();
@@ -61,6 +62,14 @@ class GameBoard {
         this.crosses[i].show();
       }
     }
+
+    if (this.balls) {
+      for (let i = 0; i < this.balls.length; i++) {
+        this.balls[i].show();
+        this.balls[i].update();
+        this.balls[i].checkForCollisionsWithWalls(this.walls);
+      }
+    }
   }
 
   getEndingBox() {
@@ -77,5 +86,9 @@ class GameBoard {
   
   getCrosses() {
     return this.crosses;
+  }
+  
+  getBalls() {
+    return this.balls;
   }
 }

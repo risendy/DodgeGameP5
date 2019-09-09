@@ -24,7 +24,7 @@ class Circle {
     this.obj.push();
 
     this.obj.stroke(0);
-    this.obj.fill(0, 120);
+    this.obj.fill(0);
 
     //this.scribbleNew.scribbleFilling([this.x - 3, this.x + 5, this.x + 5, this.x - 3], [this.y - 5, this.y - 5, this.y + 5, this.y + 5], gap, angleScribble);
 

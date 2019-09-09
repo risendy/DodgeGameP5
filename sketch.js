@@ -73,9 +73,29 @@ const welcomeScreen = (p) => {
     Level2Button.position(70, p.height / 2 + 50);
     Level2Button.class('btn-circle');
     
+    Level3Button = p.createButton('3');
+    Level3Button.attribute('disabled', '');
+    Level3Button.position(115, p.height / 2 + 50);
+    Level3Button.class('btn-circle');
+    
+    Level4Button = p.createButton('4');
+    Level4Button.attribute('disabled', '');
+    Level4Button.position(160, p.height / 2 + 50);
+    Level4Button.class('btn-circle');
+    
     if (cookies.level_2) {
           Level2Button.removeAttribute('disabled');
           Level2Button.mousePressed(p.startLevel2);
+    }
+    
+    if (cookies.level_3) {
+          Level3Button.removeAttribute('disabled');
+          Level3Button.mousePressed(p.startLevel3);
+    }
+    
+    if (cookies.level_4) {
+          Level4Button.removeAttribute('disabled');
+          Level4Button.mousePressed(p.startLevel4);
     }
 
     scribble = new Scribble(this);
@@ -133,6 +153,18 @@ const welcomeScreen = (p) => {
   p.startLevel2 = function() {
     p.remove();
     activeLevel = 2;
+    new p5(level);
+  }
+  
+  p.startLevel3 = function() {
+    p.remove();
+    activeLevel = 3;
+    new p5(level);
+  }
+  
+  p.startLevel4 = function() {
+    p.remove();
+    activeLevel = 4;
     new p5(level);
   }
 

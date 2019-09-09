@@ -9,6 +9,7 @@ class Level {
     this.endingBox = [];
     this.walls = [];
     this.crosses = [];
+    this.balls = [];
   }
 
   initStartingBox() {
@@ -88,7 +89,7 @@ class Level {
 
     return this.turrets;
   }
-  
+
   initCrosses() {
     var self = this;
 
@@ -130,6 +131,28 @@ class Level {
       });
 
       return this.walls;
+    }
+  }
+
+  initBalls() {
+    let self = this;
+
+    if (ballsMap[this.level].length > 0) {
+      ballsMap[this.level].forEach(function(item) {
+        let ball = new Ball(
+          item.x,
+          item.y,
+          item.vx,
+          item.vy,
+          item.diameter,
+          item.color,
+          self.obj
+        );
+
+        self.balls.push(ball);
+      });
+
+      return this.balls;
     }
   }
 

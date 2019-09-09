@@ -6,6 +6,7 @@ class Game {
     this.walls = this.gameBoard.getWalls();
     this.turrets = this.gameBoard.getTurrets();
     this.crosses = this.gameBoard.getCrosses();
+    this.balls = this.gameBoard.getBalls();
     
     this.scoreElem = this.obj.createDiv('Game in progress');
     this.scoreElem.position(0, this.obj.height);
@@ -29,11 +30,15 @@ class Game {
     this.hero.update(this.walls);
     
     if (this.turrets.length > 0 && bullets.length > 0){
-      this.hero.isHitByBullets(bullets);
+        this.hero.isHitByBullets(bullets);
     }
     
     if (this.crosses){
-      this.hero.isHitByCrosses(this.crosses);
+        this.hero.isHitByCrosses(this.crosses);
+    }
+    
+    if (this.balls){
+       this.hero.isHitByBalls(this.balls);
     }
       
     this.checkIfHeroIsAlive();
