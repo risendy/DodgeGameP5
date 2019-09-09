@@ -8,7 +8,7 @@
 
 ## General info
 Dodge game made using p5.js library. Use arrows to move.
-	
+
 ## Technologies
 Project is created with:
 * p5.js/p5.dom
@@ -17,10 +17,10 @@ Project is created with:
 * js.cookie https://github.com/js-cookie/js-cookie
 
 ## Features
-* Welcome screen and first 2 levels
+* Welcome screen and 4 levels
 * Unlockable levels
 * Saving user progress in cookies
-* Usable objects - Turrets/Walls/Moving circles
+* Usable objects - Turrets/Bullets/Walls/Moving balls
 * Death count
 
 ## TODO
