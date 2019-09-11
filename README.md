@@ -8,6 +8,8 @@
 
 ## General info
 Dodge game made using p5.js library. Use arrows to move.
+You can play it here: 
+https://risendy.github.io/dodgeGameP5/
 
 ## Technologies
 Project is created with:
